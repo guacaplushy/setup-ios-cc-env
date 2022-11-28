@@ -26,5 +26,5 @@ cd $workdir/cctools/usage_examples/ios_toolchain
 mv target/* $outdir
 rm -rf $workdir
 mv $outdir/* $finaldir
-rm -rf $workdir
+rm -rf $outdir
 find $finaldir/bin -type f -print0 -exec sudo ln -s {} /usr/local/bin/{} \;
