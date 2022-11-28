@@ -24,6 +24,10 @@ git clone --recursive https://github.com/guacaplushy/cctools-port $workdir/cctoo
 cd $workdir/cctools/usage_examples/ios_toolchain
 ./build.sh $workdir/iPhoneOS16.1.sdk.tar.xz arm64
 mv target/* $outdir
+git clone https://github.com/ProcursusTeam/ldid $workdir/ldid
+cd $workdir/ldid
+make -j2
+DESTDIR=$outdir make install
 rm -rf $workdir
 mv $outdir/* $finaldir
 rm -rf $outdir
