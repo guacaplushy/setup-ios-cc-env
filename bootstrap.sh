@@ -10,12 +10,12 @@ mkdir -p $finaldir
 mkdir -p $finaldir/bin
 
 echo "[*] Installing dependencies"
-sudo apt install libplist2.0-dev cmake clang build-essential unzip -y > /dev/null
+sudo apt install libplist-dev cmake clang build-essential unzip -y > /dev/null
 
 # sdk download
 echo "[*] Downloading \& extracting SDK"
 mkdir $workdir/SDK
-wget https://github.com/xybp888/iOS-SDKs/releases/download/iOS-SDKs/iPhoneOS16.1.sdk.zip -O $workdir/iPhoneOS16.1.sdk.zip > /dev/null
+wget -q https://github.com/xybp888/iOS-SDKs/releases/download/iOS-SDKs/iPhoneOS16.1.sdk.zip -O $workdir/iPhoneOS16.1.sdk.zip
 unzip -o $workdir/iPhoneOS16.1.sdk.zip -d $workdir/iPhoneOS16.1.sdk > /dev/null
 echo "[*] Repacking SDK"
 tar caf $workdir/iPhoneOS16.1.sdk.tar.xz $workdir/iPhoneOS16.1.sdk > /dev/null
