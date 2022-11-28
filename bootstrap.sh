@@ -10,7 +10,7 @@ mkdir -p $finaldir
 mkdir -p $finaldir/bin
 
 echo "[*] Installing dependencies"
-sudo apt -qq install libplist-dev cmake clang build-essential unzip -y
+sudo apt -qq install libplist-dev cmake clang build-essential unzip -y > /dev/null
 
 # sdk download
 echo "[*] Downloading & extracting SDK"
