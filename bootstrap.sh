@@ -23,4 +23,4 @@ cd $workdir/cctools/usage_examples/ios_toolchain
 ./build.sh $workdir/iPhoneOS16.1.sdk.tar.xz arm64
 mv target $outdir
 mv $outdir $finaldir
-find $outdir -type f -print0 -exec sudo ln -s {} /usr/local/bin/{} \;
+find $finaldir -type f -print0 -exec sudo ln -s {} /usr/local/bin/{} \;
