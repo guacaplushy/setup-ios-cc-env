@@ -31,4 +31,4 @@ DESTDIR=$outdir make install
 rm -rf $workdir
 mv $outdir/* $finaldir
 rm -rf $outdir
-find $finaldir/bin -type f -print0 -exec sudo ln -s {} /usr/local/bin/$(echo {} | sed 's#.*/##') \;
+echo "export PATH=$finaldir/bin:\$PATH" >> $HOME/.bashrc
