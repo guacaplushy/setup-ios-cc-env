@@ -10,7 +10,7 @@ mkdir -p $finaldir
 mkdir -p $finaldir/bin
 
 echo "[*] Installing dependencies"
-sudo apt install libplist-dev cmake clang build-essential unzip -y > /dev/null
+sudo apt -qq install libplist-dev cmake clang build-essential unzip -y
 
 # sdk download
 echo "[*] Downloading & extracting SDK"
@@ -39,7 +39,7 @@ git clone https://github.com/ProcursusTeam/ldid $workdir/ldid > /dev/null
 cd $workdir/ldid
 make -j2 > /dev/null
 DESTDIR=$outdir make install > /dev/null 
-echo "[*] Finishing up"
+echo "[*] Finishing up & installing"
 rm -rf $workdir
 mv $outdir/* $finaldir
 rm -rf $outdir
