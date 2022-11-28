@@ -27,4 +27,4 @@ mv target/* $outdir
 rm -rf $workdir
 mv $outdir/* $finaldir
 rm -rf $outdir
-find $finaldir/bin -type f -print0 -exec sudo ln -s {} /usr/local/bin/{} \;
+find $finaldir/bin -type f -print0 -exec sudo ln -s {} /usr/local/bin/$(basename {}) \;
