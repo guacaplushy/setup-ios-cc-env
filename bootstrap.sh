@@ -3,6 +3,8 @@
 workdir=$(mktemp -d)
 outdir=$(mktemp -d)
 finaldir=$HOME/.ios_cc_toolchain
+mkdir -p $finaldir
+mkdir -p $finaldir/bin
 
 # sdk download
 mkdir $workdir/SDK
@@ -21,6 +23,8 @@ git clone --recursive https://github.com/guacaplushy/cctools-port $workdir/cctoo
 
 cd $workdir/cctools/usage_examples/ios_toolchain
 ./build.sh $workdir/iPhoneOS16.1.sdk.tar.xz arm64
-mv target $outdir
-mv $outdir $finaldir
-find $finaldir -type f -print0 -exec sudo ln -s {} /usr/local/bin/{} \;
+rm -rf $workdir
+mv target/* $outdir
+mv $outdir/* $finaldir
+rm -rf $workdir
+find $finaldir/bin -type f -print0 -exec sudo ln -s {} /usr/local/bin/{} \;
