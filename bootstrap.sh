@@ -7,7 +7,7 @@ finaldir=$HOME/.ios_cc_toolchain
 # sdk download
 mkdir $workdir/SDK
 wget https://github.com/xybp888/iOS-SDKs/releases/download/iOS-SDKs/iPhoneOS16.1.sdk.zip -O $workdir/iPhoneOS16.1.sdk.zip
-unzip $workdir/iPhoneOS16.1.sdk.zip -o -d $workdir/iPhoneOS16.1.sdk
+unzip -o $workdir/iPhoneOS16.1.sdk.zip -d $workdir/iPhoneOS16.1.sdk
 tar caf $workdir/iPhoneOS16.1.sdk.tar.xz $workdir/iPhoneOS16.1.sdk
 rm -rf $workdir/iPhoneOS16.1.sdk.zip $workdir/iPhoneOS16.1.sdk
 
